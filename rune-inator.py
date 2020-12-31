@@ -63,6 +63,8 @@ def compute_offset_position(position, offset, scale=1):
 if __name__ == "__main__":
     # Get the runes for the given champion
     champ = pyautogui.prompt("Please enter the name of the champ with no spaces(e.g. for Cho'gath type Chogath). After that select the LoL client and open the rune page editor.")
+    if not champ:
+        exit(0)
     runes = murderbridge.get_runes(champ)
     print(runes)
 
