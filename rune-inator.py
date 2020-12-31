@@ -1,6 +1,7 @@
 import pyautogui
 from time import sleep
 import murderbridge
+import os
 
 # All positions relative to the "GridView" button
 PRIMARY_RUNE_TYPE_FIRST = (60, -465)
@@ -74,7 +75,8 @@ if __name__ == "__main__":
     # pyautogui.alert('This displays some text with an OK button.')
 
     # Find the grid button position. All positions are relative to this one
-    grid_rect = find_on_screen("images/GridView.png", 15)
+    grid_view_image_path = os.path.dirname(__file__) + os.sep + "images" + os.sep + "GridView.png"
+    grid_rect = find_on_screen(grid_view_image_path, 15)
     if not grid_rect:
         print("Could not find grid location. Probably the LoL client was not visible on the primary screen")
         exit(1)
