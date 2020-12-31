@@ -1,3 +1,4 @@
 https://pypi.org/project/requests-html/
 https://pyautogui.readthedocs.io/en/latest/install.html
 https://pillow.readthedocs.io/en/latest/installation.html // For locating images on screen
+https://pypi.org/project/opencv-python/ // for image finding confidence
