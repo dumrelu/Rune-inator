@@ -51,8 +51,7 @@ def moveRel(center, position):
     pyautogui.moveTo(center.x + position[0], center.y + position[1])
 
 def clickRel(center, position):
-    moveRel(center, position)
-    pyautogui.click()
+    pyautogui.click(x=center.x + position[0], y=center.y + position[1])
 
 def compute_offset_position(position, offset, scale=1):
     position = (
@@ -70,7 +69,7 @@ if __name__ == "__main__":
     print(runes)
 
     # Time(s) to wait between pyautogui commands
-    pyautogui.PAUSE = 0.5
+    pyautogui.PAUSE = 0.25
 
     # pyautogui.alert('This displays some text with an OK button.')
 
