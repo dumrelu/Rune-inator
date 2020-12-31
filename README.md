@@ -20,4 +20,4 @@ To run the script, navigate to where you have python installed and run the "rune
 These were the recommended runes for Lux: ![LuxRunes](./images/MurderBridgeLuxRunes.PNG)
 
 Here is the script running(Note there is a dialog when starting the script to input the name of the champion, that dialog was not recorded):
-![LuxRuneConfiguration](https://i.imgur.com/Kl5Cnau.mp4)
+[Link to imgur](https://i.imgur.com/Kl5Cnau.mp4)
