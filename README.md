@@ -1,6 +1,6 @@
 # Rune-inator
 
-A simple python script that takes runes from https://www.murderbridge.com and configures the runes in the League of Legends client.
+A simple python script that takes runes from https://www.murderbridge.com (for ARAMs) and configures the runes in the League of Legends client.
 
 ## TODOs
 
