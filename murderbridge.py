@@ -1,5 +1,8 @@
 from requests_html import HTMLSession
 
+# Documentation: https://requests.readthedocs.io/projects/requests-html/en/latest/
+# XPath documentation: https://devhints.io/xpath
+
 # General
 BASE_URL = "https://www.murderbridge.com/Champion/{}"
 NTH_STYLE_SELECTOR = "/div[contains(concat(' ',normalize-space(@class),' '),'style-selector')]/div[@role='button'][{}]"
@@ -28,7 +31,7 @@ def get_runes(championName):
     r = session.get(BASE_URL.format(championName))
 
     result = {}
-    result["championName"] = championName
+    result["champion"] = championName
 
     # Primary runes
     for index in  range(5):
