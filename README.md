@@ -6,6 +6,8 @@ A simple python script that takes runes from https://www.murderbridge.com and co
 
 Note that currently it only supports clients of size 1280x720. To support other sizes the positions and the GridView.png image need to be scaled.
 
+![Window size set to 1280x720](./images/ClientSize.PNG)
+
 ## Requirements
 First you need to download python3 from https://www.python.org/downloads/ 
 
