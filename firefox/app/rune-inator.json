@@ -1,0 +1,7 @@
+{
+  "name": "rune_inator",
+  "description": "Configure runes in the LoL client",
+  "path": "C:\\Users\\dumre\\Rune-inator\\firefox\\app\\rune-inator.bat",
+  "type": "stdio",
+  "allowed_extensions": [ "dum.relu@gmail.com" ]
+}

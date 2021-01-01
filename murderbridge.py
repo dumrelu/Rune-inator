@@ -38,8 +38,7 @@ def get_runes(championName):
         value = r.html.xpath(PRIMARY_RUNES_NTH_TYPE.format(index + 1))
         
         if len(value) != 1:
-            print("Invalid primary rune value")
-            exit(1)
+            raise RuntimeError("Invalid primary rune value")
         value = value[0]
 
         for c in value.attrs["class"]:
@@ -48,8 +47,7 @@ def get_runes(championName):
                 break
     
     if "primary" not in result:
-        print("Could not find primary value")
-        exit(1)
+        raise RuntimeError("Could not find primary value")
 
     # Primary rune values
     result["primaryValues"] = []
@@ -67,16 +65,14 @@ def get_runes(championName):
                 result["primaryValues"].append(column)
     
     if len(result["primaryValues"]) != 4:
-        print("Number of primary runes != 4")
-        exit(1)
+        raise RuntimeError("Number of primary runes != 4")
     
     # Secondary runes
     for index in  range(4):
         value = r.html.xpath(SECONDARY_RUNES_NTH_TYPE.format(index + 1))
         
         if len(value) != 1:
-            print("Invalid secondary rune value")
-            exit(1)
+            raise RuntimeError("Invalid secondary rune value")
         value = value[0]
 
         for c in value.attrs["class"]:
@@ -85,8 +81,7 @@ def get_runes(championName):
                 break
     
     if "secondary" not in result:
-        print("Could not find secondary value")
-        exit(1)
+        raise RuntimeError("Could not find secondary value")
 
     # Secondary rune values
     result["secondaryValues"] = []
@@ -104,8 +99,7 @@ def get_runes(championName):
                 result["secondaryValues"][-1] = column
     
     if len(result["secondaryValues"]) != 3:
-        print("Number of secondary runes != 3")
-        exit(1)
+        raise RuntimeError("Number of secondary runes != 3")
     
     # Shards
     result["shards"] = []

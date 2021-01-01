@@ -60,11 +60,9 @@ def compute_offset_position(position, offset, scale=1):
     )
     return position
 
-if __name__ == "__main__":
-    # Get the runes for the given champion
-    champ = pyautogui.prompt("Please enter the name of the champ with no spaces(e.g. for Cho'gath type Chogath). After that select the LoL client and open the rune page editor.")
+def select_runes_for_champ(champ):
     if not champ:
-        exit(0)
+        raise RuntimeError("A chamption name is required")
     runes = murderbridge.get_runes(champ)
     print(runes)
 
@@ -77,8 +75,7 @@ if __name__ == "__main__":
     grid_view_image_path = os.path.dirname(__file__) + os.sep + "images" + os.sep + "GridView.png"
     grid_rect = find_on_screen(grid_view_image_path, 15)
     if not grid_rect:
-        print("Could not find grid location. Probably the LoL client was not visible on the primary screen")
-        exit(1)
+        raise RuntimeError("Could not find grid location. Probably the LoL client was not visible on the primary screen")
     grid_location = pyautogui.center(grid_rect)
 
     # Click on the grid button
@@ -132,3 +129,8 @@ if __name__ == "__main__":
     
     # Save the runes
     clickRel(grid_location, SAVE_BUTTON)
+
+if __name__ == "__main__":
+    # Get the runes for the given champion
+    champ = pyautogui.prompt("Please enter the name of the champ with no spaces(e.g. for Cho'gath type Chogath). After that select the LoL client and open the rune page editor.")
+    select_runes_for_champ(champ)
